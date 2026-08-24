@@ -89,18 +89,16 @@
 		updateTimer();
 
 		const cached = readCachedModDownloads();
-		if (cached) {
-			downloads = cached;
-			return () => cancelAnimationFrame(raf);
-		}
+		if (cached) downloads = cached;
 
+		// Always revalidate — do not return early on cache (stale null totals otherwise stick for 1h).
 		fetchModDownloads()
 			.then((data) => {
 				downloads = data;
 				writeCachedModDownloads(data);
 			})
 			.catch(() => {
-				downloads = failedModDownloads();
+				if (!downloads) downloads = failedModDownloads();
 			});
 
 		return () => cancelAnimationFrame(raf);

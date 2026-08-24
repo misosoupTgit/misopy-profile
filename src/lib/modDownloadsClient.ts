@@ -1,6 +1,7 @@
 import { emptyModDownloadStats, type ModDownloadStats } from '$lib/modStats';
 
-const CACHE_KEY = 'misopy_mod_downloads_v1';
+/** Bump when cached shape/semantics change so browsers drop stale entries. */
+const CACHE_KEY = 'misopy_mod_downloads_v2';
 const CLIENT_TTL_MS = 60 * 60 * 1000;
 
 type CachePayload = { at: number; data: ModDownloadStats };
@@ -26,7 +27,7 @@ export function writeCachedModDownloads(data: ModDownloadStats) {
 }
 
 export async function fetchModDownloads(): Promise<ModDownloadStats> {
-	const res = await fetch('/api/mod-downloads');
+	const res = await fetch(`/api/mod-downloads?t=${Date.now()}`, { cache: 'no-store' });
 	if (!res.ok) throw new Error(String(res.status));
 	return (await res.json()) as ModDownloadStats;
 }
