@@ -1,0 +1,16 @@
+﻿{
+  "runs": [
+    {
+      "at": "2026-08-24",
+      "verb": "redesign",
+      "scope": "single-page",
+      "target": "index.html",
+      "mood": "precise",
+      "genre": "modern-minimal",
+      "theme": "cobalt-brand-anchored",
+      "macrostructure": "Split Studio",
+      "nav": "N1+cmdk",
+      "footer": "Ft2"
+    }
+  ]
+}

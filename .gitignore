@@ -1,0 +1,32 @@
+# Dependencies
+node_modules
+
+# Build / SvelteKit / Cloudflare
+.svelte-kit
+build
+dist
+.wrangler
+.vercel
+.netlify
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+.cursor
+
+# Archives & local dumps
+*.zip
+*.log
+
+# Vite
+vite.config.*.timestamp-*
+
+desktop.ini

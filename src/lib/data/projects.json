@@ -1,0 +1,68 @@
+[
+  {
+    "id": "notdotblur",
+    "title": "NotDotBlur",
+    "image": "/images/notdotblur.webp",
+    "tags": ["Rust"],
+    "github": null,
+    "desc": {
+      "en": "A pixel art upscaling tool developed using the Win32 API and Rust that launches in 20 milliseconds",
+      "ja": "Win32APIとRustで開発された、コールドロードで最短20msで起動するドット絵高画質化ソフトウェア"
+    }
+  },
+  {
+    "id": "mistengine",
+    "title": "MistEngineIDE, MistJSCompiler",
+    "image": "/images/mistengineide.webp",
+    "tags": ["Rust"],
+    "github": "https://github.com/misosoupTgit/MistEngineIDE",
+    "desc": {
+      "en": "An ultra-fast, dedicated language and a convenient IDE tailored for 2D game development.",
+      "ja": "2Dゲーム開発に特化した、超高速な専用言語と便利な統合開発環境"
+    }
+  },
+  {
+    "id": "screenshottoclipboard",
+    "title": "ScreenshotToClipboard",
+    "image": "/images/screenshottoclipboard.webp",
+    "tags": ["Java", "Fabric"],
+    "github": null,
+    "desc": {
+      "en": "A mod that copies screenshots taken in Minecraft to the clipboard",
+      "ja": "Minecraft内でのスクリーンショットをクリップボードにコピーするMod"
+    }
+  },
+  {
+    "id": "mwgr",
+    "title": "Mekanism: Water Generator Rebuild",
+    "image": "/images/mekanism_water_generator_rebuild.webp",
+    "tags": ["Java", "Forge"],
+    "github": "https://github.com/misosoupTgit/MekanismWaterGeneratorRebuild",
+    "desc": {
+      "en": "An improved version of CFB Sink, optimized for industrial mods in Minecraft. A mod that adds a water generator featuring an ultra-lightweight design and a wide range of functions.",
+      "ja": "CFB Sinkを改良しMinecraftでの工業化Mod環境に最適化。超軽量かつ多彩な機能を搭載した水生成機を追加するMod"
+    }
+  },
+  {
+    "id": "noresploadfix",
+    "title": "NoRespLoadFix",
+    "image": "/images/noresploadfix.webp",
+    "tags": ["Java", "Forge", "NeoForge", "Fabric"],
+    "github": "https://github.com/misosoupTgit/NoresploadFix",
+    "desc": {
+      "en": "A mod that resolves the “not responding” issue in high-load environments, such as Minecraft modpacks, by applying `DisableProcessWindowsGhosting()` early on.",
+      "ja": "DisableProcessWindowsGhosting()を早い段階で適応することで、MinecraftのModpackのような高負荷環境での「応答なし」問題を解決するMod"
+    }
+  },
+  {
+    "id": "csm",
+    "title": "CSM - Client Side Mobs",
+    "image": "/images/csm.webp",
+    "tags": ["Java", "NeoForge"],
+    "github": "https://github.com/misosoupTgit/ClientSideMobs",
+    "desc": {
+      "en": "A technical and experimental Minecraft mod that takes an unconventional approach by handling all processing entirely on the client side, allowing mobs added by this mod to function properly even if the mod isn't installed on the server.",
+      "ja": "クライアントサイドで全ての処理を完結するという型破りなアプローチで、サーバーにこのModが導入されていなくても、このModで追加されたモブを正常に動かせる、技術的かつ実験的なMinecraftMod"
+    }
+  }
+]

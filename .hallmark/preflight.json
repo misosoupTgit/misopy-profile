@@ -1,0 +1,8 @@
+﻿{
+  "scanned_at": "2026-08-24",
+  "framework": "vanilla-html",
+  "fonts": ["Space Grotesk", "IBM Plex Sans", "JetBrains Mono"],
+  "palette": "brand: #2A3439 / #F4F7F9 / #598392",
+  "motion": "motion-cut",
+  "preserved": ["brand colors", "i18n copy", "visitor counter", "birthday countdown", "lightbox", "icon flip"]
+}
