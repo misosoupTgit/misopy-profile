@@ -105,11 +105,11 @@ async function fetchCurseforgeTotal(
 	return { total, projects };
 }
 
-async function loadStats(): Promise<ModDownloadStats> {
-	const modrinthUser = getEnv('MODRINTH_USERNAME', 'MisoPy');
-	const cfKey = getCurseforgeApiKey();
-	const cfAuthorName = getEnv('CURSEFORGE_AUTHOR_NAME', 'MisoPy');
-	const cfAuthorIdEnv = getEnv('CURSEFORGE_AUTHOR_ID', '');
+async function loadStats(platformEnv?: App.Platform['env']): Promise<ModDownloadStats> {
+	const modrinthUser = getEnv('MODRINTH_USERNAME', platformEnv, 'MisoPy');
+	const cfKey = getCurseforgeApiKey(platformEnv);
+	const cfAuthorName = getEnv('CURSEFORGE_AUTHOR_NAME', platformEnv, 'MisoPy');
+	const cfAuthorIdEnv = getEnv('CURSEFORGE_AUTHOR_ID', platformEnv, '');
 
 	const result = emptyModDownloadStats();
 	const errors: string[] = [];
@@ -122,7 +122,9 @@ async function loadStats(): Promise<ModDownloadStats> {
 		errors.push(e instanceof Error ? e.message : 'Modrinth failed');
 	}
 
-	if (cfKey) {
+	if (!cfKey) {
+		errors.push('CURSEFORGE_API_KEY missing (set CURSEFORGE_API_KEY or CURSEFORGE_API_KEY_B64)');
+	} else {
 		try {
 			const authorId = await resolveCurseforgeAuthorId(cfKey, cfAuthorName, cfAuthorIdEnv);
 			if (authorId == null) {
@@ -144,8 +146,8 @@ async function loadStats(): Promise<ModDownloadStats> {
 	return result;
 }
 
-export const GET: RequestHandler = async () => {
-	const result = await withSingleFlight(loadStats);
+export const GET: RequestHandler = async ({ platform }) => {
+	const result = await withSingleFlight(() => loadStats(platform?.env));
 
 	return json(result, {
 		headers: {
