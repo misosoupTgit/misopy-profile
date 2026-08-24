@@ -1,0 +1,6 @@
+{
+	"name": "misopy-profile",
+	"pages_build_output_dir": ".svelte-kit/cloudflare",
+	"compatibility_date": "2025-12-12",
+	"compatibility_flags": ["nodejs_als"]
+}
